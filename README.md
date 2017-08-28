@@ -6,12 +6,13 @@
 *** association
 has_many chats
 has_many groups,through: :user_groups
+has_many user_groups
 
 ** chatテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|string|-------|
-|text|string|null: false|
+|text|string|-------|
 |image|string|-------|
 |chat_id|string|-------|
 |group_id|string|-------|
@@ -27,7 +28,7 @@ belongs_to group
 
 *** association
 has_many users,through: :user_groups
-has_many chats
+has_many user_groups
 
 ** user_groupテーブル
 |Column|Type|Options|
