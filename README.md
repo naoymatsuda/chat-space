@@ -1,24 +1,31 @@
-# README
+** usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|-------|
+|name|string|-------|
+|mail|string|-------|
+|password|string|-------|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*** association
+user has_many chats
+user has_many goups
 
-Things you may want to cover:
+** chatテーブル
+|------|----|-------|
+|user_id|string|-------|
+|text|string|-------|
+|chat_id|string|-------|
+|created_at|timestamp|-------|
 
-* Ruby version
+*** association
+chat belong_to user
+chat belong_to group
 
-* System dependencies
+** groupテーブル
+|------|----|-------|
+|user_id|string|-------|
+|name|string|-------|
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*** association
+group has_many users
+group has_many chats
