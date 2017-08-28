@@ -1,7 +1,7 @@
 ** userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 
 *** association
 has_many chats
@@ -11,6 +11,7 @@ has_many goups
 |------|----|-------|
 |user_id|string|-------|
 |text|string|null: false|
+|image|string|-------|
 |chat_id|string|-------|
 |group_id|string|-------|
 
@@ -18,18 +19,9 @@ has_many goups
 belongs_to user
 belongs_to group
 
-** imageテーブル
-|------|----|-------|
-|user_id|string|-------|
-|image|string|-------|
-|chat_id|string|-------|
-
-*** association
-belongs_to chat
-
 ** groupテーブル
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 
 *** association
 has_many users
