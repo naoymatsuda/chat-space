@@ -11,11 +11,11 @@ has_many user_groups
 ** chatテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|-------|
-|text|string|-------|
-|image|string|-------|
-|chat_id|string|-------|
-|group_id|string|-------|
+|user_id|string|null: false|
+|text|string||
+|image|string||
+|chat_id|string|null: false|
+|group_id|string|null: false|
 
 *** association
 belongs_to user
@@ -33,8 +33,8 @@ has_many user_groups
 ** user_groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|-------|
-|group_id|string|-------|
+|user_id|string|null: false,foreign_key: true|
+|group_id|string|null: false,foreign_key: true|
 
 *** association
 belongs_to user
