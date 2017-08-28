@@ -1,31 +1,41 @@
-** usersテーブル
+** userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|-------|
-|name|string|-------|
-|mail|string|-------|
-|password|string|-------|
+|name|string|null: false|
 
 *** association
-user has_many chats
-user has_many goups
+has_many chats
+has_many goups
 
 ** chatテーブル
 |------|----|-------|
 |user_id|string|-------|
-|text|string|-------|
+|text|string|null: false|
 |chat_id|string|-------|
-|created_at|timestamp|-------|
+|group_id|string|-------|
 
 *** association
-chat belong_to user
-chat belong_to group
+belongs_to user
+belongs_to group
+
+** imageテーブル
+|------|----|-------|
+|user_id|string|-------|
+|image|string|-------|
+|chat_id|string|-------|
+
+*** association
+belongs_to chat
 
 ** groupテーブル
 |------|----|-------|
-|user_id|string|-------|
-|name|string|-------|
+|name|string|null: false|
 
 *** association
-group has_many users
-group has_many chats
+has_many users
+has_many chats
+
+** user_groupテーブル
+|------|----|-------|
+|user_id|string|-------|
+|group_id|string|-------|
