@@ -1,3 +1,5 @@
+$color_white: #FFFFFF;
+
 .wrapper {
   display: flex;
 }
@@ -10,13 +12,13 @@
       height: 100px;
       padding: 0 20px;
       line-height: 100px;
-        .header__name {
+        &__name {
           display: inline-block;
           font-size: 16px;
-          color: #FFFFFF;
+          color: $color_white;
           font-weight: bold;
         }
-        .header__lists {
+        &__lists {
         display: inline-block;
         float: right;
           .list {
@@ -34,18 +36,18 @@
 .groups {
   background-color: #2f3e51;
   height: calc(100vh - 100px);
-  color: #FFFFFF;
+  color: $color_white;
   padding: 0 20px;
     .group {
       box-sizing: border-box;
       padding: 20px 0 40px;
-      .group__name {
-        color: #FFFFFF;
+      &__name {
+        color: $color_white;
         font-size: 15px;
         padding-bottom: 40px;
       }
       .chat__name {
-        color: #FFFFFF;
+        color: $color_white;
         font-size: 11px;
       }
     }
@@ -59,7 +61,7 @@
       padding: 0 40px;
       .left-header {
         float: left;
-        .left-header__title {
+        &__title {
           color: #333;
           font-size: 20px;
           margin-top: 35px;
@@ -89,7 +91,7 @@
       padding: 46px 40px 0;
       .messages {
         margin-bottom: 40px;
-        .upper-message{
+        .upper-message {
           display: flex;
         }
         .lower-message {
@@ -103,20 +105,20 @@
       height: 90px;
       padding: 20px 50px 20px 40px;
       bottom: 0;
-      .form__message {
+      &__message {
         float: left;
         height: 50px;
         width: calc(100% - 150px);
       }
-      .form__mask {
+      &__mask {
         float: left;
         height: 50px;
         padding-right: 10px;
       }
-      .form__submit {
+      &__submit {
         background-color: #38AEF0;
         border: none;
-        color: #fff;
+        color: $color_white;
         float: right;
         font-size: 16px;
         height: 50px;
