@@ -1,5 +1,3 @@
-$color_white: #FFFFFF;
-
 .wrapper {
   display: flex;
 }
@@ -8,7 +6,7 @@ $color_white: #FFFFFF;
   width: 300px;
   height: 1000px;
     .header {
-      background-color: #253141;
+      background-color: $side-bar__header;
       height: 100px;
       padding: 0 20px;
       line-height: 100px;
@@ -34,7 +32,7 @@ $color_white: #FFFFFF;
 }
 
 .groups {
-  background-color: #2f3e51;
+  background-color: $groups;
   height: calc(100vh - 100px);
   color: $color_white;
   padding: 0 20px;
@@ -62,12 +60,12 @@ $color_white: #FFFFFF;
       .left-header {
         float: left;
         &__title {
-          color: #333;
+          color: $chat__header__left-header__title;
           font-size: 20px;
           margin-top: 35px;
           .left-header__members {
             display: flex;
-            color: #999;
+            color: $chat__header__left-header__title__left-header__members;
             font-size: 12px;
             margin-top: 15px;
           }
@@ -75,7 +73,7 @@ $color_white: #FFFFFF;
       }
       .right-header {
         border: 1px solid;
-        color: #38AEF0;
+        color: $chat__header__right-header;
         float: right;
         height: 40px;
         line-height: 40px;
@@ -84,7 +82,7 @@ $color_white: #FFFFFF;
       }
     }
     .messages_group {
-      background-color: #FAFAFA;
+      background-color: $chat__header__messages_group;
       box-sizing: border-box;
       height: calc(100vh - 100px - 90px);
       overflow: scroll;
@@ -100,7 +98,7 @@ $color_white: #FFFFFF;
       }
     }
     .form {
-      background-color: #DDDDDD;
+      background-color: $form;
       box-sizing: border-box;
       height: 90px;
       padding: 20px 50px 20px 40px;
@@ -116,7 +114,7 @@ $color_white: #FFFFFF;
         padding-right: 10px;
       }
       &__submit {
-        background-color: #38AEF0;
+        background-color: $form__submit;
         border: none;
         color: $color_white;
         float: right;
