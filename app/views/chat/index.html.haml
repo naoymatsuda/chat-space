@@ -4,9 +4,9 @@
       %h3.header__name nmatsuda
       %ul.header__lists
         %li.list<
-          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          %i.fa.fa-pencil-square-o
         %li.list<
-          <i class="fa fa-cog" aria-hidden="true"></i>
+          %i.fa.fa-cog
     .groups
       .group
         %ul
@@ -52,6 +52,8 @@
           hello!
     .form
       .js-form#new_message
-        %input.form__message#message_content{:placeholder => "Please enter your message" }
-        .form__mask
-        %input.form__submit{:type => "submit", :name => "sample", :value => "SEND" }
+        %input.form__message#message_content{ placeholder: "Please enter your message" }
+          .form__mask
+            %label.form__mask__image
+              %i.fa.fa-picture-o
+        %input.form__submit{ type: "submit", value: "SEND" }
