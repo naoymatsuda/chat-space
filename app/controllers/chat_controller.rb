@@ -1,3 +1,2 @@
 class ChatController < ApplicationController
-
 end

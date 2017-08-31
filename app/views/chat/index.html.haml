@@ -1,61 +1,59 @@
-%body
-  .flash
-    .wrapper
-      .side-bar
-        .header
-          %h3.header__name nmatsuda
-          %ul.header__lists
-            %li.list<
-              %i.fa.fa-pencil-square-o
-            %li.list<
-              %i.fa.fa-cog
-        .groups
-          .group
-            %ul
-              %li.group__name<
-                グループ1
-                %p.chat__name
-                  Hello!
-              %li.group__name<
-                グループ1
-                %p.chat__name
-                  Hello!
-      .chat
-        .header
-          .left-header
-            .left-header__title
-              matsudaグループ
-              %ul.left-header__members
-                Members: 
-                %li.member
-                  matsuda
-                %li.member
-                  taro
-          .right-header
-            Edit
-        .messages_group
-          .messages
-            .upper-message
-              .upper-message__user-name
+%body.wrapper
+  .side-bar
+    .header
+      %h3.header__name nmatsuda
+      %ul.header__lists
+        %li.list<
+          %i.fa.fa-pencil-square-o
+        %li.list<
+          %i.fa.fa-cog
+    .groups
+      .group
+        %ul
+          %li.group__name<
+            グループ1
+            %p.chat__name
+              Hello!
+          %li.group__name<
+            グループ1
+            %p.chat__name
+              Hello!
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          matsudaグループ
+          %ul.left-header__members
+            Members: 
+            %li.member
               matsuda
-              .upper-message__date
-              2017/08/24 06:57
-            .lower-message
-              .lower-message__content
-                hello!
-          .messages
-            .upper-message
-              .upper-message__user-name
+            %li.member
               taro
-              .upper-message__date
-              2017/08/24 06:57
-            .lower-message
-              .lower-message__content
-              hello!
-        .form
-          .js-form#new_message
-            %input.form__message#message_content{ placeholder: "Please enter your message" }
-              .form__mask
-                %label.form__mask__image
-                  %i.fa.fa-picture-o
-            %input.form__submit{ type: "submit", value: "SEND" }
+      .right-header
+        Edit
+    .messages_group
+      .messages
+        .upper-message
+          .upper-message__user-name
+          matsuda
+          .upper-message__date
+          2017/08/24 06:57
+        .lower-message
+          .lower-message__content
+            hello!
+      .messages
+        .upper-message
+          .upper-message__user-name
+          taro
+          .upper-message__date
+          2017/08/24 06:57
+        .lower-message
+          .lower-message__content
+          hello!
+    .form
+      .js-form#new_message
+        %input.form__message#message_content{ placeholder: "Please enter your message" }
+          .form__mask
+            %label.form__mask__image
+              %i.fa.fa-picture-o
+        %input.form__submit{ type: "submit", value: "SEND" }
