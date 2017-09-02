@@ -6,20 +6,14 @@
           %h3.header__name nmatsuda
           %ul.header__lists
             %li.list<
-              %i.fa.fa-pencil-square-o
+              = link_to new_group_path do
+                %i.fa.fa-pencil-square-o
             %li.list<
               %i.fa.fa-cog
         .groups
           .group
-            %ul
-              %li.group__name<
-                グループ1
-                %p.chat__name
-                  Hello!
-              %li.group__name<
-                グループ1
-                %p.chat__name
-                  Hello!
+            = render partial: "groups/group", collection: @groups
+
       .chat
         .header
           .left-header
