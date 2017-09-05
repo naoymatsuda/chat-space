@@ -19,9 +19,10 @@
         &__lists {
         display: inline-block;
         float: right;
+        color: $color_white;;
           .list {
             display: inline-block;
-            color: white;
+            color: $color_white;
           }
         }
     }
@@ -42,12 +43,12 @@
       &__name {
         color: $color_white;
         font-size: 15px;
-        padding-bottom: 40px;
         text-align: left;
       }
-      .chat__name {
+      &__chat {
         color: $color_white;
         font-size: 11px;
+        float: left;
       }
     }
 }
@@ -90,47 +91,71 @@
       padding: 46px 40px 0;
       .messages {
         margin-bottom: 40px;
+        color: $font-awsome_color;
         .upper-message {
           display: flex;
+          &__user-name {
+            color: #434a54;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__date {
+            color: #999;
+            font-size: 12px;
+            padding-left: 10px;
+            margin-top: 2px;
+          }
         }
         .lower-message {
           margin-top: 10px;
+          float: left;
+          &__content {
+            color: #434a54;
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
         }
       }
     }
     .form {
-      background-color: $form;
-      box-sizing: border-box;
-      height: 90px;
-      padding: 20px 50px 20px 40px;
-      bottom: 0;
-      &__message {
-        float: left;
-        height: 50px;
-        width: calc(100% - 150px);
-        border: none;
-        padding: 0 10px;
+      js-form {
+
+      }
+        background-color: $form;
         box-sizing: border-box;
+        height: 90px;
+        padding: 20px 50px 20px 40px;
+        bottom: 0;
+        &__message {
+          float: left;
+          height: 50px;
+          border: none;
+          padding: 0 10px;
+          box-sizing: border-box;
+          width: calc(100% - 150px);
+        }
+        &__mask {
+          background-color: $color_white;
+          float: left;
+          height: 50px;
+          padding-right: 10px;
+            .file_none {
+              display: none;
+            }
+            .form__mask__image {
+              font-size: 20px;
+              line-height: 50px;
+              color: $font-awsome_color;
+            }
+        }
+        &__submit {
+          background-color: $form__submit;
+          border: none;
+          color: $color_white;
+          float: right;
+          font-size: 16px;
+          height: 50px;
+          padding: 0 30px;
+        }
       }
-      &__mask {
-        background-color: $color_white;
-        float: left;
-        height: 50px;
-        padding-right: 10px;
-          .form__mask__image {
-            font-size: 30px;
-            line-height: 50px;
-            color: $font-awsome_color;
-          }
-      }
-      &__submit {
-        background-color: $form__submit;
-        border: none;
-        color: $color_white;
-        float: right;
-        font-size: 16px;
-        height: 50px;
-        padding: 0 30px;
-      }
-    }
 }
