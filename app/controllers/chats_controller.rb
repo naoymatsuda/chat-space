@@ -14,9 +14,8 @@ class ChatsController < ApplicationController
 
   def create
     @chat = current_user.chats.new(chat_params)
-    # Chat.new(user_id: current_user.id, chat_params)
     if @chat.save
-      redirect_to group_chats_path
+      redirect_to group_chats_path, notice: 'チャットを作成しました。'
     else
       flash[:alert] = 'メッセージの入力に失敗しました'
       render :new

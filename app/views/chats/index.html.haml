@@ -28,7 +28,7 @@
             = link_to edit_group_path(@groups) do
               Edit
         .messages_group
-          = render partial: "chats/chat", collection: @chats
+          = render @chats
         .form
           = form_for @chat, url: group_chats_path(@group), html: {class: 'js-form'} do |f|
             = f.text_field :text, placeholder: "Please enter your message", class: 'form__message'
