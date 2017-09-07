@@ -13,10 +13,10 @@ class ChatsController < ApplicationController
   end
 
   def create
-    user = current_user.id
-    @chat = Chat.new(chat_params)
+    @chat = current_user.chats.new(chat_params)
+    # Chat.new(user_id: current_user.id, chat_params)
     if @chat.save
-      redirect_to group_chats_path(@group)
+      redirect_to group_chats_path
     else
       flash[:alert] = 'メッセージの入力に失敗しました'
       render :new
@@ -24,6 +24,6 @@ class ChatsController < ApplicationController
   end
 
   def chat_params
-    params.require(:chat).permit(:text, :image, :group_id).merge(user_id: user)
+    params.require(:chat).permit(:text, :image, :group_id)
   end
 end

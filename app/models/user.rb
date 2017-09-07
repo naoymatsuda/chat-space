@@ -7,5 +7,5 @@ class User < ApplicationRecord
   # has_many chats
   has_many :groups,through: :user_groups
   has_many :user_groups
-  has_many :chats,through: :user_groups
+  has_many :chats
 end
