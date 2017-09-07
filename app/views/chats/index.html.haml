@@ -1,0 +1,40 @@
+%body
+  .flash
+    .wrapper
+      .side-bar
+        .header
+          %h3.header__name nmatsuda
+          %ul.header__lists
+            %li.list<
+              = link_to new_group_path do
+                %i.fa.fa-pencil-square-o
+            %li.list<
+              %i.fa.fa-cog.fa-spin
+        .groups
+          = render @groups
+
+      .chat
+        .header
+          .left-header
+            .left-header__title
+              matsudaグループ
+              %ul.left-header__members
+                Members: 
+                %li.member
+                  matsuda
+                %li.member
+                  taro
+          .right-header
+            = link_to edit_group_path(@groups) do
+              Edit
+        .messages_group
+          = render @chats
+        .form
+          = form_for @chat, url: group_chats_path(@group), html: {class: 'js-form'} do |f|
+            = f.text_field :text, placeholder: "Please enter your message", class: 'form__message'
+            .form__mask
+              %label
+                = f.file_field :image , class: 'file_none'
+                %i.fa.fa-picture-o.form__mask__image
+            = f.hidden_field :group_id, value: "#{@group.id}"
+            = f.submit "SEND" , class: 'form__submit'

@@ -1,4 +1,7 @@
-.group__name
-  / =link_to
-  %p.group__name #{group.name}
-  %p.chat__name
+.group
+  =link_to group_chats_path(group) do
+    %p.group__name #{group.name}
+  - if group.chats.exists?
+    %p.group__chat #{group.chats.last.text}
+  - else
+    %p.group__chat まだメッセージはありません。
