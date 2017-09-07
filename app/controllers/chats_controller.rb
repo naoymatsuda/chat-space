@@ -1,7 +1,7 @@
 class ChatsController < ApplicationController
 
   def index
-    @groups = Group.all
+    @groups = current_user.groups
     @group = Group.find(params[:group_id])
     @chat = Chat.new
     @chats = @group.chats.order('created_at DESC')
@@ -9,9 +9,11 @@ class ChatsController < ApplicationController
 
   def new
     @chat = Chat.new
+    @user = current_user.id
   end
 
   def create
+    user = current_user.id
     @chat = Chat.new(chat_params)
     if @chat.save
       redirect_to group_chats_path(@group)
@@ -22,6 +24,6 @@ class ChatsController < ApplicationController
   end
 
   def chat_params
-    params.require(:chat).permit(:text, :image, :group_id).merge(user_id: current_user.id)
+    params.require(:chat).permit(:text, :image, :group_id).merge(user_id: user)
   end
 end

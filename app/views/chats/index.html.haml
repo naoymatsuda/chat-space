@@ -11,7 +11,7 @@
             %li.list<
               %i.fa.fa-cog.fa-spin
         .groups
-          = render @groups
+          = render partial: "chat", collection: @chat,locals: {chat: @chats}
 
       .chat
         .header
