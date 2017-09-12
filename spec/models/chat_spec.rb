@@ -32,8 +32,7 @@ describe Chat do
 
   describe '#create' do
     it "is valid without a group_id" do
-      chat = build(:chat)
-      chat.group_id = nil
+      chat = build(:chat, group_id: nil)
       chat.valid?
       expect(chat.errors[:group_id]).to include("can't be blank")
     end
@@ -41,8 +40,7 @@ describe Chat do
 
   describe '#create' do
     it "is valid without a user_id" do
-      chat = build(:chat)
-      chat.user_id = nil
+      chat = build(:chat, user_id: nil)
       chat.valid?
       expect(chat.errors[:user_id]).to include("can't be blank")
     end
