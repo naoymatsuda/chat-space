@@ -1,4 +1,5 @@
 class ChatsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :index, :create]
 
   def index
     @groups = current_user.groups
@@ -18,7 +19,7 @@ class ChatsController < ApplicationController
       redirect_to group_chats_path, notice: 'チャットを作成しました。'
     else
       flash[:alert] = 'メッセージの入力に失敗しました'
-      render :new
+      render :index
     end
   end
 
