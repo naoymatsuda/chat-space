@@ -7,3 +7,6 @@
   .lower-message
     .lower-message__content
       = chat.text
+  - if chat.image.present?
+    .lower-message__image
+      = image_tag chat.image.url

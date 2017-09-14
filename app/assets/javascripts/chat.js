@@ -1,5 +1,7 @@
 $(function(){
   function buildHTML(chat){
+    var image = (chat.image) ? `<img src = ${chat.image}>`: "";
+    console.log(image);
     var html =
     `<div class="messages">
        <div class="upper-message">
@@ -14,9 +16,8 @@ $(function(){
          <div class="lower-message__content">
            ${chat.text}
          </div>
-         <div class="lower-message__image">
-           ${chat.image}
-          </div>
+         <img class="lower-message__image">
+           ${image}
        </div>
     </div>`;
   return html;
@@ -25,6 +26,7 @@ $(function(){
 $(function () {
   $('#new_comment').on('submit', function(e){
     e.preventDefault();
+    onclick = "undisabled()";
     var formData = new FormData(this);
     var url = $(this).attr('action');
     console.log(url);
