@@ -14,6 +14,9 @@ $(function(){
          <div class="lower-message__content">
            ${chat.text}
          </div>
+         <div class="lower-message__image">
+           ${chat.image}
+          </div>
        </div>
     </div>`;
   return html;
