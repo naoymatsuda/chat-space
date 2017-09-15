@@ -1,7 +1,6 @@
 $(function(){
   function buildHTML(chat){
     var image = (chat.image) ? `<img src = ${chat.image}>`: "";
-    console.log(image);
     var html =
     `<div class="messages">
        <div class="upper-message">
@@ -29,7 +28,6 @@ $(function () {
     onclick = "undisabled()";
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    console.log(url);
     $.ajax({
       url: url,
       type: "POST",
@@ -40,7 +38,6 @@ $(function () {
     })
 
     .done(function(chat){
-      console.log(chat);
       var html = buildHTML(chat);
       $('.messages_group').append(html);
       $('#chat_text').val("");
