@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :groups,through: :user_groups
   has_many :user_groups
   has_many :chats
+
+  scope :name_search,->(current_user,keyword){ where('name LIKE(?)',"%#{keyword}%").where.not( id: current_user )}
 end

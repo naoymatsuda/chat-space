@@ -9,7 +9,8 @@
               = link_to new_group_path do
                 %i.fa.fa-pencil-square-o
             %li.list<
-              %i.fa.fa-cog.fa-spin
+              = link_to edit_user_registration_path (current_user.id) do
+                %i.fa.fa-cog.fa-spin
         .groups
           = render @groups
 
@@ -17,13 +18,11 @@
         .header
           .left-header
             .left-header__title
-              matsudaグループ
+              = "#{@group.name}"
               %ul.left-header__members
                 Members:
-                %li.member
-                  matsuda
-                %li.member
-                  taro
+                = render partial: "users", collection: @users 
+
           .right-header
             = link_to edit_group_path(@groups) do
               Edit

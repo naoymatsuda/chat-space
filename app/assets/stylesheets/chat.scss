@@ -61,16 +61,17 @@
       padding: 0 40px;
       .left-header {
         float: left;
+        text-align: left;
         &__title {
           color: $chat__header__left-header__title;
-          font-size: 20px;
-          margin-top: 35px;
-          .left-header__members {
-            display: flex;
-            color: $chat__header__left-header__title__left-header__members;
-            font-size: 12px;
-            margin-top: 15px;
-          }
+          font-size: 25px;
+          margin-top: 25px;
+        }
+        &__members {
+          display: flex;
+          color: $chat__header__left-header__title__left-header__members;
+          font-size: 12px;
+          margin-top: 15px;
         }
       }
       .right-header {
