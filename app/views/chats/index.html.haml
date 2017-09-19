@@ -9,7 +9,8 @@
               = link_to new_group_path do
                 %i.fa.fa-pencil-square-o
             %li.list<
-              %i.fa.fa-cog.fa-spin
+              = link_to edit_user_registration_path (current_user.id) do
+                %i.fa.fa-cog.fa-spin
         .groups
           = render @groups
 
@@ -19,7 +20,7 @@
             .left-header__title
               matsudaグループ
               %ul.left-header__members
-                Members: 
+                Members:
                 %li.member
                   matsuda
                 %li.member
