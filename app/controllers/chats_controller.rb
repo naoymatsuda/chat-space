@@ -6,6 +6,7 @@ class ChatsController < ApplicationController
     @group = Group.find(params[:group_id])
     @chat = Chat.new
     @chats = @group.chats.order('created_at DESC')
+    @users = @group.users
   end
 
   def new
