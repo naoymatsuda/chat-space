@@ -5,8 +5,13 @@ class ChatsController < ApplicationController
     @groups = current_user.groups
     @group = Group.find(params[:group_id])
     @chat = Chat.new
-    @chats = @group.chats.order('created_at DESC')
+    @chats = @group.chats.order('created_at ASC')
     @users = @group.users
+
+    respond_to do |format|
+      format.html
+      format.json { @reload_chat = @group.chats.where('id > ?', params[:num])}
+    end
   end
 
   def new
@@ -15,10 +20,11 @@ class ChatsController < ApplicationController
   end
 
   def create
+    @group = Group.find(params[:group_id])
     @chat = current_user.chats.new(chat_params)
     if @chat.save
       respond_to do |format|
-        format.html { redierct_to root_path }
+        format.html { redirect_to group_chats_path(@group) }
         format.json
       end
     else
